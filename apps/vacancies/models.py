@@ -17,7 +17,7 @@ class Vacancies(models.Model):
     price = models.IntegerField(validators=[MinValueValidator(1)], null=True, blank=True, verbose_name='Оплата')
     company = models.CharField(max_length=100, null=True, blank=True, verbose_name='Компания(не обязательно)')
     contract = models.BooleanField(choices=CHOICES, verbose_name='Цена')
-    direction = models.ManyToManyField(Direction, blank=True, null=True, verbose_name='Направления')
+    direction = models.ManyToManyField(Direction, blank=True, null=True, verbose_name='Направлениe')
     time_creat = models.DateTimeField(auto_now_add=True, null=True)
 
     class Meta:

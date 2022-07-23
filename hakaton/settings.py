@@ -29,9 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_FILTER_BACKENDS':(
-    #     'django_filters.rest_framework.DjangoFilterBackend',
-    # ),
+    'DEFAULT_FILTER_BACKENDS':(
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 5,
@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'djoser',
+    'django_filters',
     'rest_framework.authtoken',
     'corsheaders',
     'drf_yasg',
@@ -78,7 +79,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsWiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -151,6 +152,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
 ]
@@ -158,14 +161,16 @@ CORS_ORIGIN_WHITELIST = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/morgenshtern/hakaton/static'
+MEDIA_ROOT = '/home/morgenshtern/hakaton/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
