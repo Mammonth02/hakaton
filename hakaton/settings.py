@@ -42,6 +42,8 @@ REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
 
 
@@ -67,6 +69,7 @@ INSTALLED_APPS = [
 
     # apps
     'apps.user',
+    'apps.vacancies',
     'apps.direction',
 ]
 

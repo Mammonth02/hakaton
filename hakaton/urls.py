@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('swagger/', schema_view), # swagger
     path('auth/', include('apps.user.urls')),
+    path('vacancies/', include('apps.vacancies.urls')),
     path('auth/', include('djoser.urls')),
     re_path('auth/', include('djoser.urls.authtoken')),
 

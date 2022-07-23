@@ -21,8 +21,8 @@ class User(AbstractUser):
 
     image = models.ImageField(upload_to='profile_images/', null=True, blank=True, verbose_name='Аватарка')
     phone = models.IntegerField(validators=[MinValueValidator(12), MaxValueValidator(12)], null=True, blank=True, verbose_name='Телефон')
-    direction = models.ManyToManyField(Direction, blank=True, null=True)
-    city = models.CharField(max_length=100, blank=True, null=True)
+    direction = models.ManyToManyField(Direction, blank=True, null=True, verbose_name='Направления')
+    city = models.CharField(max_length=100, blank=True, null=True, verbose_name='Mесто жительства')
 
     
     
