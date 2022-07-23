@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*9=^=4f2&wexzn9%p+c!6b-8r@&_0j5t51-g9x$@exf*h%@uu+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS':(
@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'djoser',
     'rest_framework.authtoken',
+    'corsheaders',
+    'drf_yasg',
 
     # apps
     'apps.user',
@@ -148,6 +150,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
